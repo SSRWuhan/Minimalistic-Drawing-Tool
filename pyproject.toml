@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minimalistic_drawing_tool"
+version = "0.1.0"
+description = "A simple drawing tool for creating simple game assets or using it as an interface for ai models like a handwritten digit recognition model or something similar."
+authors = [{ name = "Sheikh Shaheed Rijwan Wuhan", email = "ssrwuhan09@gmail.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.7"
+dependencies = ["numpy", "pillow"]

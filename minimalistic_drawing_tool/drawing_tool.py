@@ -71,6 +71,8 @@ class mdt(tk.Tk):
             self.__GRID_Y = int(screen_dim[0])
             self.__GRID_X = int(screen_dim[1])
             self.__window.geometry(f"{self.__WIDTH}x{self.__HEIGHT}")
+            self.__window.minsize(self.__WIDTH, self.__HEIGHT)
+            self.__window.maxsize(self.__WIDTH, self.__HEIGHT)
             self.window_buffer = np.zeros((self.__GRID_Y, self.__GRID_X, self.__COLOR_CHANNELS))
             self.__canvas.delete("all")
             self.__querry_window.destroy()
@@ -81,6 +83,8 @@ class mdt(tk.Tk):
     def __create_querry_window(self):
         self.__querry_window = tk.Toplevel()
         self.__querry_window.geometry("500x150")
+        self.__querry_window.minsize(500, 150)
+        self.__querry_window.maxsize(500, 150)
         frame = ttk.Frame(self.__querry_window)
         l1 = ttk.Label(frame, text="enter resolution: (width, height)").grid(row=0,column=0, padx=10, pady=5)
         resolution_var = tk.StringVar(value=f"{self.__WIDTH}, {self.__HEIGHT}")
@@ -119,6 +123,9 @@ class mdt(tk.Tk):
         self.__window.title("minimalistic drawing tool")
 
         self.__window.geometry(f"{self.__WIDTH}x{self.__HEIGHT}")
+        self.__window.minsize(self.__WIDTH, self.__HEIGHT)
+        self.__window.maxsize(self.__WIDTH, self.__HEIGHT)
+
 
         self.__menubar = tk.Menu(self.__window)
         self.__window.config(menu=self.__menubar)
