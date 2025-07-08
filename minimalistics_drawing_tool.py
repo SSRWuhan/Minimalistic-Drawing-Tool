@@ -10,10 +10,11 @@ from tkinter import messagebox
 
 class mdt(tk.Tk):
     def __init__(self, title="minimalistic drawing tool", screen_dim=(500, 500)):
+        self.title = title
         self.__COLOR = "white"
         self.__BACKGROUND = "black"
-        self.__WIDTH = 500
-        self.__HEIGHT = 500
+        self.__WIDTH = screen_dim[0]
+        self.__HEIGHT = screen_dim[1]
         self.__COLOR_CHANNELS = 3
         self.__CELL_SIZE = 50
         self.__GRID_X = 10
