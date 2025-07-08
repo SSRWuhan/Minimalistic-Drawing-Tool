@@ -74,6 +74,7 @@ class mdt(tk.Tk):
             self.window_buffer = np.zeros((self.__GRID_Y, self.__GRID_X, self.__COLOR_CHANNELS))
             self.__canvas.delete("all")
             self.__querry_window.destroy()
+            print(self.__window_buffer.shape)
         else:
             messagebox.showerror(title="ERROR", message="Incompatiable dimensions")
 
@@ -87,8 +88,8 @@ class mdt(tk.Tk):
         l2 = ttk.Label(frame, text="enter each cell/pixel size: " ).grid(row=1,column=0, padx=10, pady=5)
         cell_size_var = tk.StringVar(value=self.__CELL_SIZE)
         cell_size = ttk.Entry(frame, textvariable=cell_size_var).grid(row=1,column=1, padx=10, pady=5)
-        l3 = ttk.Label(frame, text="enter screen dimensions: (width, height)" ).grid(row=2,column=0, padx=10, pady=5)
-        screen_dim_var = tk.StringVar(value=f"{self.__GRID_Y}, {self.__GRID_X}")
+        l3 = ttk.Label(frame, text="enter screen dimensions: (height, width)" ).grid(row=2,column=0, padx=10, pady=5)
+        screen_dim_var = tk.StringVar(value=f"{self.__GRID_X}, {self.__GRID_Y}")
         screen_dim = ttk.Entry(frame, textvariable=screen_dim_var).grid(row=2,column=1, padx=10, pady=5)
         button = ttk.Button(frame, text="apply changes", command=lambda: self.__change_resolution(resolution_var.get(), cell_size_var.get(), screen_dim_var.get())).grid(row=3,column=2, padx=10, pady=5)
         frame.pack(anchor="center")
