@@ -1,5 +1,6 @@
 import math
 import threading
+from contextlib import suppress
 import numpy as np
 from PIL import Image
 import tkinter as tk
@@ -61,24 +62,25 @@ class mdt(tk.Tk):
 
     def __change_resolution(self, resolution, cell_size, screen_dim):
 
-        resolution = resolution.split(",")
-        screen_dim = screen_dim.split(",")
+        with suppress(RecursionError):
+            resolution = resolution.split(",")
+            screen_dim = screen_dim.split(",")
 
-        if(self.__WIDTH == self.__GRID_Y * self.__CELL_SIZE and self.__HEIGHT == self.__GRID_X * self.__CELL_SIZE):
-            self.__WIDTH = int(resolution[0])
-            self.__HEIGHT = int(resolution[1])
-            self.__CELL_SIZE = int(cell_size)
-            self.__GRID_Y = int(screen_dim[0])
-            self.__GRID_X = int(screen_dim[1])
-            self.__window.geometry(f"{self.__WIDTH}x{self.__HEIGHT}")
-            self.__window.minsize(self.__WIDTH, self.__HEIGHT)
-            self.__window.maxsize(self.__WIDTH, self.__HEIGHT)
-            self.window_buffer = np.zeros((self.__GRID_Y, self.__GRID_X, self.__COLOR_CHANNELS))
-            self.__canvas.delete("all")
-            self.__querry_window.destroy()
-            print(self.__window_buffer.shape)
-        else:
-            messagebox.showerror(title="ERROR", message="Incompatiable dimensions")
+            if(self.__WIDTH == self.__GRID_Y * self.__CELL_SIZE and self.__HEIGHT == self.__GRID_X * self.__CELL_SIZE):
+                self.__WIDTH = int(resolution[0])
+                self.__HEIGHT = int(resolution[1])
+                self.__CELL_SIZE = int(cell_size)
+                self.__GRID_Y = int(screen_dim[0])
+                self.__GRID_X = int(screen_dim[1])
+                self.__window.geometry(f"{self.__WIDTH}x{self.__HEIGHT}")
+                self.__window.minsize(self.__WIDTH, self.__HEIGHT)
+                self.__window.maxsize(self.__WIDTH, self.__HEIGHT)
+                self.window_buffer = np.zeros((self.__GRID_Y, self.__GRID_X, self.__COLOR_CHANNELS))
+                self.__canvas.delete("all")
+                self.__querry_window.destroy()
+                print(self.__window_buffer.shape)
+            else:
+                messagebox.showerror(title="ERROR", message="Incompatiable dimensions")
 
     def __create_querry_window(self):
         self.__querry_window = tk.Toplevel()
