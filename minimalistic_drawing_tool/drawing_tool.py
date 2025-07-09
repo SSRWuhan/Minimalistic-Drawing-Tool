@@ -162,7 +162,3 @@ class mdt(tk.Tk):
     
     def initialize(self, daemon):
         threading.Thread(target=self.__run, daemon=daemon).start()
-
-
-app = mdt()
-app.initialize(False)
