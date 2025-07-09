@@ -19,7 +19,7 @@ The buttons present on the GUI of the tool are described below,
 ## Installation
 This tool can be easily installed with `pip` using this command
 ```python
-pip install minimalistic_drawing_tool
+pip install https://github.com/SSRWuhan/Minimalistic-Drawing-Tool/releases/download/v1.0.0/minimalistic_drawing_tool-0.1.0-py3-none-any.whl
 ```
 
 # Example
