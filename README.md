@@ -27,6 +27,10 @@ pip install minimalistic_drawing_tool
 import minimalistic_drawing_tool as mdt
 
 app = mdt.mdt()
+
+
 mdt.initialize(False)
 
 ```
+# Demonstration
+https://github.com/user-attachments/assets/41118aba-22fd-4dbd-b413-07314cf93d0a
