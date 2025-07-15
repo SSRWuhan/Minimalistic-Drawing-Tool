@@ -29,7 +29,7 @@ import minimalistic_drawing_tool as mdt
 app = mdt.mdt()
 
 
-mdt.initialize(False)
+app.initialize(False)
 
 ```
 # Demonstration
