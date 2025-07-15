@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+minimalistic_drawing_tool/__init__.py
+minimalistic_drawing_tool/drawing_tool.py
+minimalistic_drawing_tool.egg-info/PKG-INFO
+minimalistic_drawing_tool.egg-info/SOURCES.txt
+minimalistic_drawing_tool.egg-info/dependency_links.txt
+minimalistic_drawing_tool.egg-info/requires.txt
+minimalistic_drawing_tool.egg-info/top_level.txt
